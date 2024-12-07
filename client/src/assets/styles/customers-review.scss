@@ -1,0 +1,55 @@
+@import 'var';
+@import 'mixin';
+
+h1 {
+    @include headingText;
+}
+
+.review {
+    background-color: $black;
+    .review-container {
+        @include blogsAndReview;
+        .review-box {
+            border: $bd;
+            background-color: $bg;
+            text-align: center;
+            @include pgmg($pg: 3rem 2rem);
+            p {
+                color: #ccc;
+                @include pgmg($pg: 2rem 0);
+            }
+            .review-info {
+                @include flex($ai: center, $jc: center);
+                gap: 1.2rem;
+                margin-bottom: 1.4rem;
+                i {
+                    color: $secondary-color;
+                }
+                span {
+                    line-height: 1.4;
+                    color: $secondary-color;
+                }
+            }
+            .customer-info {
+                @include flex($ai: center, $jc: center);
+                gap: 4vh;
+                padding-bottom: 2vh;
+                .user {
+                    height: 7rem;
+                    width: 7rem;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+                span {
+                    @include pgmg($pg: 1rem 0);
+                    color: $white;
+                }
+            }
+            .stars {
+                i {
+                    color: $primary-color; 
+                }
+            }
+        }
+    }
+}

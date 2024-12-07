@@ -1,0 +1,36 @@
+@import 'var';
+@import 'mixin';
+
+.preloader-font {
+    @include font($size: calc(2rem + 3vw), $width: bold, $style: normal, $family: $font-family-two, $lh: 1em, $ls: 16px, $tt: uppercase);
+}
+.icons-font {
+    @include font-two($size: 2.5rem, $width: bold, $style: normal, $lh: 2rem, $ls: 1.4px, $tt: uppercase);
+}
+.input-font {
+    @include font($size: 1.9rem, $width: bold, $style: oblique 10deg, $family: $font-family-three, $lh: 2rem, $ls: 5px, $tt: lowercase);
+}
+.a-font {
+    @include font($size: 1.6rem, $width: bold, $style: italic, $family: $font-family-two, $lh: 1.8, $ls: 4px, $tt: lowercase);
+}
+.p-font {
+    @include font($size: 2rem, $width: bold, $style: normal, $family: $font-family-two, $lh: 0.8, $ls: 2px, $tt: lowercase);
+}
+.p-font-two {
+    @include font($size: 2rem, $width: bold, $style: normal, $family: $font-family-two, $lh: 1.1, $ls: 2.4px, $tt: lowercase);
+}
+.h3-font {
+    @include font($size: 4rem, $width: bold, $style: normal, $family: $font-family-one, $lh: 1.2, $ls: 3px, $tt: uppercase);
+}
+.h3-basket-font {
+    @include font($size: 2rem, $width: bold, $style: normal, $family: $font-family-one, $lh: 1.8, $ls: 4px, $tt: uppercase);
+}
+.h5-font {
+    @include font($size: 1.4rem, $width: bold, $style: italic, $family: $font-family-one, $lh: 1.8, $ls: 3px, $tt: uppercase);
+}
+.price-font {
+    @include font($size: 2.5rem, $width: bold, $style: normal, $family: $font-family-three, $lh: 1.5rem, $ls: 3px, $tt: lowercase);
+}
+.price-sale-font {
+    @include font($size: 1.5rem, $width: lighter, $style: italic, $family: $font-family-four, $lh: 1.5rem, $ls: -1px, $tt: lowercase);
+}

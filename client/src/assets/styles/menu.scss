@@ -1,0 +1,66 @@
+@import 'var';
+@import 'mixin';
+
+h1 {
+    @include headingText;
+}
+
+.menu {
+    padding-top: -.6rem;
+    background-color: $black;
+    width: 100%;
+    .category {
+        @include flex($fd: row, $ai: center, $jc: center, $fw: nowrap);
+        @include pgmg($pg: 2rem 0, $mg: 2rem 0);
+        width: 100%;
+        gap: 2.6rem;
+        .category-box {
+            @include flex($fd: column, $ai: center, $jc: center);
+            cursor: pointer;
+            width: 20%;
+            @include pgmg($pg: 1.8rem 0);
+            transition: all .3s ease-in-out;
+            background-color: $white;
+            border-radius: $bdr;
+            border: $bd;
+            i {
+                font-size: 4rem;
+                transition: all .3s ease-in-out;
+                color: $secondary-color;
+                margin-bottom: 1rem;
+                pointer-events: none;
+            }
+            span {
+                pointer-events: none;
+                transition: all .3s ease-in-out;
+                color: $secondary-color;
+            } 
+            &:hover {
+                i {
+                    color: $black;
+                }
+                span {
+                    color: $black;
+                }
+            }
+            &.active{
+                background-color: $third-color;
+            i {
+                color: $white;
+            }
+            span {
+                color: $white;
+            }
+            }
+        }
+    }
+    .product {
+        .product-box {
+            width: 80vw;
+            display: grid;
+            grid-template-columns: repeat(4, 24vw);
+            gap: .5vw;
+            
+        }
+    }
+}

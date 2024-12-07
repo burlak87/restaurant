@@ -1,0 +1,87 @@
+@import 'var';
+@import 'mixin';
+
+h1 {
+    @include headingText;
+}
+
+.about-row {
+    @include flex($ai: center);
+    background-color: $black;
+    .about-image {
+        flex: $flex;
+        img {
+            width: 100%;
+        }
+    }
+    .about-content {
+        padding-left: 1rem;
+        flex: $flex;
+        color: $white;
+        h3 {
+            color: $white;
+        }
+        p {
+            color: #ccc;
+            @include pgmg($pg: 1rem 0);
+        }
+    }
+}
+
+.about-story {
+    height: 80vh;
+    @include flex($fd: column, $ai: center, $jc: center);
+    background-color: $black;
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    p {
+        color: $white;
+        text-align: center;
+    }
+    .play-btn {
+        width: 5rem;
+        height: 5rem;
+        background-color: $primary-color;
+        border-radius: 50%;
+        @include flex($ai: center, $jc: center);
+        display: flex;
+        padding-left: .3rem;
+        padding-top: .3rem;
+        font-size: 40px;
+        @include pgmg($mg: 4rem 0);
+        cursor: pointer; 
+        &:hover {
+            background-color: $secondary-color;
+        }
+    }
+}
+
+.our-strenght-row {
+    @include flex($ai: center, $jc: space-evenly);
+    background-color: $black;
+    height: 28vh;
+    .our-strenght-item {
+        height: 40vh;
+        width: 6vw;
+        @include flex($fd: column, $ai: center, $jc: center);
+        padding-left: 1rem;
+        flex: $flex;
+        color: $white;
+        .our-strenght-item-icon {
+            height: 10vh;
+            width: 6vw;
+            @include flex($ai: center, $jc: center);
+            i {
+                font-size: 6rem;
+                transition: all .3s ease-in-out;
+                color: $secondary-color;
+                margin-bottom: 1rem;
+                pointer-events: none;
+            }
+        }
+        h5 {
+            color: $white;
+        }
+    }
+}

@@ -1,0 +1,86 @@
+@import 'var';
+@import 'mixin';
+
+h1 {
+    @include headingText;
+}
+
+.special-dish-row {
+    display: flex;
+    align-items: center;
+    @include flex($ai: center);
+    background-color: $black;
+    .special-dish-content {
+        padding-left: 1rem;
+        flex: $flex;
+        color: $white;
+        h3 {
+            color: $white;
+        }
+        p {
+            color: #ccc;
+            @include pgmg($pg: 1rem 0);
+        }
+        .price-product-item {
+            color: $white;
+            @include pgmg($pg: .5rem 0);
+            span {
+                color: $white;
+                text-decoration: line-through;
+            }
+        }
+    }
+    .special-dish-banner {
+        flex: $flex;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.banner-box {
+    width: 100vw;
+    height: 44vh;
+    @include flex($ai: center, $jc: center, $fw: wrap);
+    gap: 2.2rem;
+    background-color: $black;
+    .gallery-banner {
+        @include pgmg($pg: 2vh);
+        width: 28%;
+        height: 24vh;
+        @include flex($fd: row-reverse, $ai: center, $jc: space-between);
+        background-color: $white;
+        border-radius: $bdr;
+        img {
+            height: 78%;
+            width: 94%;
+            object-fit: cover;
+            border-radius: 64px;
+            box-shadow: 0 0 7px #666;
+        }
+        &:hover {
+            img {
+                transform: scale(1.05) rotate(10deg) translateX(-8%);
+                box-shadow: 0 0 7px #666;
+            }
+        }
+        .gallery-content {
+            @include flex($fd: column);
+            @include pgmg($mg: 1rem);
+            gap: .8rem;
+            h3 {
+                color: $black;
+            }
+            span {
+                display: block;
+                color: $black;
+                width: 100%;
+            }
+            .btn {
+                &:hover {
+                    letter-spacing: 0;
+                }
+            }
+        }
+    }
+}

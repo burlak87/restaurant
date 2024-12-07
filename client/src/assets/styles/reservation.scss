@@ -1,0 +1,54 @@
+@import 'var';
+@import 'mixin';
+
+h1 {
+    @include headingText;
+}
+
+.reservation {
+    background-color: $black;
+    @include flex($fd: row, $ai: center, $jc: center);
+    gap: 3rem;
+    width: 100%;
+    .input-form-box {
+        width: 30%;
+        @include flex($fd: column, $ai: center, $jc: center);
+        gap: 1.4rem;
+        background: $primary-color;
+        @include pgmg($pg: 1.2rem 0);
+        h3 {
+            color: $white;
+            padding-bottom: .5rem;
+            text-align: center;
+        }
+        input {
+            height: 100%;
+            width: 80%;
+            color: $white;
+            border: $bd;
+            @include pgmg($pg: 1rem);
+            text-transform: none;
+            background-color: $primary-color;
+        }
+        a {
+            @include pgmg($mg: .5vh);
+        }
+    }
+    .reservation-content {
+        width: 30%;
+        @include flex($fd: column, $ai: start, $jc: center);
+        gap: 1.2rem;
+        h3 {
+            text-transform: uppercase;
+            color: $white;
+        }
+        span {
+            color: $secondary-color;
+            transform: rotate(-5deg);
+        }
+        p {
+            color: $white;
+            @include pgmg($pg: 1rem 0);
+        }
+    }
+}

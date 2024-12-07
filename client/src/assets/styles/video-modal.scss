@@ -1,0 +1,29 @@
+@import 'var';
+@import 'mixin';
+
+.modal-overlay {
+    @include position($pos: fixed, $t: 0, $l: 0, $r: 0, $b: 0);
+    @include flex($ai: center, $jc: center);
+    background: rgba(0, 0, 0, 0.7);
+
+}
+
+.modal {
+    @include flex($ai: center, $jc: center);
+    @include position($pos: relative);
+    width: 58%;
+    height: 68%;
+    background: $bg;
+    @include pgmg($pg: 20px);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+    @include position($pos: absolute, $t: 10px, $r: 20px);
+    font-size: 16px;
+    border: none;
+    background: none;
+    color: $white;
+    cursor: pointer;
+}

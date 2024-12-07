@@ -1,0 +1,116 @@
+@import 'var';
+@import 'mixin';
+
+h1 {
+    @include headingText;
+}
+
+.deal {
+    @include flex($ai: center);
+    @include bgi();
+    height: 70vh;
+    background-color: $black;
+    .deal-content {
+        @include pgmg($mg: 0 12rem);
+        max-width: 50rem;
+        h3 {
+            color: $white;
+        }
+        p {
+            @include pgmg($pg: 1rem 0);
+            color: $white;
+        }
+        .count-down {
+            @include flex();
+            gap: 1rem;
+            @include pgmg($pg: .5rem 0);
+            .count-down-box {
+                width: 9rem;
+                text-align: center;
+                box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+                border: .1rem solid rgba(0,0,0,.3);
+                h3 {
+                    background: $white;
+                    color: $secondary-color;
+                    height: 7rem;
+                    line-height: 7rem;
+                    width: 100%;
+                    font-size: 5rem;
+                }
+                span {
+                    display: block;
+                    background-color: #333;
+                    color: $secondary-color;
+                    width: 100%;
+                    @include pgmg($pg: .5rem);
+                }
+            }
+        }
+    }
+}
+
+.events-container {
+    @include flex($fd: column, $ai: center, $jc: center);
+    gap: 4rem;
+    background-color: $black;
+    h4 {
+        color: $primary-color;
+        @include pgmg($pg: .4rem 0, $mg: .4rem 0);
+        font-size: 22px;
+    }
+    .upcoming-events {
+        @include pgmg($mg: 2vh 0);
+    }
+    .events-item-box {
+        @include flex($ai: center, $jc: center);
+        gap: 6rem;
+        .events-item {
+            width: 26rem;
+            height: 34rem;
+            background-color: #333;
+            @include flex($fd: column, $ai: center, $jc: end);
+            gap: 1.4rem;
+            @include position($pos: relative);
+            border: 1px solid rgb(255, 255, 255);
+            overflow: hidden;
+            cursor: pointer;
+            &:hover {
+                box-shadow: 1px 1px 25px 10px rgb(255, 255, 255);
+            }
+            &:before {
+                content: "";
+                @include position($pos: absolute, $t: 0, $l: -100%);
+                width: 200px;
+                height: 100%;
+                background: linear-gradient(120deg, transparent, rgb(255, 255, 255), transparent);
+                transition: all 150ms;
+              }
+            &:hover:before {
+                left: 100%;
+            }
+            span {
+                @include pgmg($pg: .5rem);
+                background-color: $black;
+                color: $secondary-color;
+                border: 1px solid $secondary-color;
+            }
+            h5 {
+                color: $white;
+            }
+            p {
+                color: $white;
+                text-align: center;
+                padding-bottom: .8rem;
+            }
+        }
+        .events-item#first-item {
+            @include bgi($bgi: url('../assets/images/eat.jpg'));
+        }
+        .events-item#second-item {
+            @include bgi($bgi: url('../assets/images/eat.jpg'));
+        }
+        .events-item#third-item {
+            @include bgi($bgi: url('../assets/images/eat.jpg'));
+        }
+    }
+}

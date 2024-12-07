@@ -1,0 +1,30 @@
+@import 'var';
+@import 'mixin';
+
+article {
+    @include pgmg($pg: 2rem 7%);
+}
+
+.home {
+    min-height: 100vh;
+    @include flex($ai: center);
+    @include bgi();
+}
+
+.home-content {
+    position: absolute;
+    top: 40%; 
+    left: 56%;
+    max-width: 60rem;
+    h3 {
+        text-transform: uppercase;
+        color: $bg;
+    }
+    p {
+        
+        text-transform: lighter;
+        line-height:1.8;
+        @include pgmg($pg: 1rem 0);
+        color: $bg;
+    }
+}

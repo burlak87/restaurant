@@ -1,0 +1,49 @@
+@import 'var';
+@import 'mixin';
+
+h1 {
+    @include headingText;
+}
+
+.contact {
+    background-color: $black;
+    .contact-row {
+        @include flex($ai: center, $fw: wrap);
+        background-color: $black;
+        gap: 1rem;
+        .map {
+            flex: $flex;
+            height: 100%;
+            width: 100%;
+            height: max-content;
+            object-fit: cover;
+        }
+        form {
+            flex: $flex;
+            @include pgmg($pg: 5rem 2rem);
+            text-align: center;
+            h3 {
+                text-transform: uppercase;
+                color: $white;
+            }
+            .contact-inputBox {
+                @include flex($ai: center);
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+                background-color: $bg;
+                border: $bd;
+                span {
+                    color: $white;
+                    padding-left: 2rem;
+                }
+                input {
+                    width: 100%;
+                    @include pgmg($pg: 2rem);
+                    color: $white;
+                    text-transform: none;
+                    background: none;
+                }
+            }
+        }
+    }
+}

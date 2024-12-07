@@ -1,0 +1,30 @@
+@import 'var';
+@import 'mixin';
+
+h1 {
+    @include headingText;
+}
+
+.food {
+    background-color: $black;
+    .food-slider {
+        width: 90rem;
+        height: 60rem;
+    }
+}
+
+.slide {
+    text-align: center;
+    @include pgmg($pg: 3rem 2rem);
+    img {
+        height: 22rem;
+        margin-bottom: 1rem;
+    }
+    h3 {
+        @include pgmg($pg: 1rem 0);
+        color: $white;
+    }
+    .price-food-slider {
+        color: $primary-color;
+    }
+}

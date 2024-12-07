@@ -1,0 +1,29 @@
+@import 'var';
+@import 'mixin';
+
+.product-item {
+    text-align: center;
+    border: 1px solid $third-color;
+    border-radius: $bdr;
+    background-color: $white;
+    @include pgmg($pg: 1rem, $mg: 1rem);
+    .image-product {
+        height: 16rem;
+    }
+    h3 {
+        color: $black;
+    }
+    .price-product-item {
+        color: $black;
+        span {
+            text-decoration: line-through;
+        }
+    }
+    .btn {
+        &:hover {
+            background-color: $third-color;
+            border: 1px solid $black;
+            color: $black;
+        }
+    }
+}

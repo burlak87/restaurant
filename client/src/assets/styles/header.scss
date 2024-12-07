@@ -1,0 +1,108 @@
+@import 'var';
+@import 'mixin';
+
+.header {
+    height: 8vh;
+    background-color: $bg;
+    @include flex($ai: center, $jc: space-between);
+    @include pgmg($pg: 1.5rem 7%);
+    border-bottom: $bd;
+    @include position($pos: fixed, $t: 0, $l: 0, $r: 0, $zi: 100);
+    z-index: 100;
+    .logo {
+        img {
+            height: 5rem;
+        }
+    }
+    .navbar {
+        a {
+            @include pgmg($mg: 0 1rem);
+            color: $white;
+            &:hover {
+                color: $primary-color;
+                border-bottom: .1rem solid $primary-color;
+                padding-bottom: .5rem;
+            }
+        }
+    }
+    .icons {
+        section {
+            color: $white;
+            cursor: pointer;
+            margin-left: 1.6rem;
+            &:hover {
+                color: $secondary-color;
+            }
+        }
+        #menu-btn {
+            display: none;
+        }
+    }
+}
+
+.search-form {
+    @include formAndContainers(115%, 7%, 50rem);
+    height: 5rem;
+    @include flex($ai: center);
+    transform: scaleY(0);
+    transform-origin: top;
+    input {
+        height: 100%;
+        width: 100%;
+        color: $black;
+        background-color: $white;
+        @include pgmg($pg: 1rem);
+        text-transform: none;
+    }
+    label {
+        cursor: pointer;
+        margin-right: 1.5rem;
+        color: $black;
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+}
+.search-form.active {
+    transform: scaleY(1);
+}
+
+.cart-items-container {
+    @include formAndContainers(100%, -100%, 35rem);
+    height: calc(100vh - 9.5rem);
+    @include pgmg($pg: 0 1.5rem);
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+    .cart-item {
+        @include position($pos: relative);
+        @include pgmg($mg: 2rem 0);
+        @include flex($ai: center);
+        gap: 1.5rem;
+        .fa-times {
+            @include position($pos: absolute, $t: 1rem, $r: 1rem);
+            cursor: pointer;
+            color: $black;
+            &:hover {
+                color: $secondary-color;
+            }
+        }
+        img {
+            height: 7rem;
+        }
+        .cart-content {
+            h3 {
+                color: $black;
+                padding-bottom: .5rem;
+            }
+            .cart-price {
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+.cart-items-container.active {
+    right: 0;
+}

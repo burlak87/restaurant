@@ -1,0 +1,54 @@
+@import 'var';
+@import 'mixin';
+
+h1 {
+    @include headingText;
+}
+
+.blogs {
+    background-color: $black;
+    .blogs-container {
+        @include blogsAndReview;
+        .blogs-box {
+            border: $bd;
+            background-color: $black;
+            .blogs-image {
+                height: 25rem;
+                overflow: hidden;
+                width: 100%;
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                    width: 100%;
+                }
+            }
+            .blogs-content {
+                @include pgmg($pg: 2rem);
+                background-color: $bg;
+                .title {
+                    color: $white;
+                    &:hover {
+                        color: $third-color;
+                    }
+                }
+                span {
+                    color: $primary-color;
+                    display: block;
+                    padding-top: 1rem;
+                }
+                p {
+                    line-height: 1.8;
+                    color: #ccc;
+                    @include pgmg($pg: 1rem 0);
+                }
+            }
+            &:hover {
+                .blogs-image {
+                    img {
+                        transform: scale(1.2);
+                    }
+                }
+            }
+        }
+    }
+}
